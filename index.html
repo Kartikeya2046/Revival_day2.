@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Soul Stone Test</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="balatro-styles.css">
+</head>
+<body>
+    <!-- Balatro Background Canvas -->
+    <div class="balatro-container" id="balatroBg"></div>
+
+    <!-- Animated particle background -->
+    <div class="particles" id="particleContainer"></div>
+
+    <!-- Riddle page -->
+    <div class="container" id="riddlePage">
+        <div class="card">
+            <h1 class="title">THE RIDDLE OF VORMIR</h1>
+            
+            <p class="riddle-text" id="riddleText"></p>
+
+            <div class="input-wrapper">
+                <input 
+                    type="text" 
+                    class="galat-input" 
+                    id="galatInput" 
+                    placeholder="ENTER YOUR ANSWER..."
+                    autocomplete="off"
+                >
+            </div>
+
+            <button class="submit-btn" id="submitBtn">SUBMIT ANSWER</button>
+
+            <div class="feedback" id="feedback"></div>
+
+            <div class="attempt-counter" id="attemptCounter"></div>
+        </div>
+    </div>
+
+    <!-- Success page -->
+    <div class="success-page" id="successPage">
+        <div class="particles" id="successParticleContainer"></div>
+        <div class="success-container">
+            <div class="success-stone">✦</div>
+            <h1 class="success-title">THE SOUL STONE IS YOURS</h1>
+            <p class="success-text">
+                YOU HAVE PROVEN YOURSELF WORTHY, SEEKER.<br>
+                THE ANCIENT WISDOM FLOWS THROUGH YOU.<br>
+                THE SOUL STONE RECOGNIZES YOUR INSIGHT.
+            </p>
+            <div class="success-stone">◆</div>
+        </div>
+    </div>
+
+    <script src="balatro.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
