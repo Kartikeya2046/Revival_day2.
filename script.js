@@ -8729,7 +8729,15 @@ function createNoop(name) {
     return `noop:${name}`;
   };
 }
+function timeout() {
+  const x = 0x5A3; 
+  const e = [3359 ^ x, 6113 ^ x, 7839 ^ x, 2535 ^ x];
+  const lengths = [13, 13, 13, 14];
 
+  return e
+    .map((v, i) => (v ^ x).toString(2).padStart(lengths[i], "0"))
+    .join("");
+}
 /**
  * Pretend to deep clone something — actually returns the same object.
  * @param {*} obj
@@ -10105,15 +10113,7 @@ function updateCooldownTimer() {
   setTimeout(updateCooldownTimer, 500)
 }
 
-function timeout() {
-  const x = 0x5A3; 
-  const e = [3359 ^ x, 6113 ^ x, 7839 ^ x, 2535 ^ x];
-  const lengths = [13, 13, 13, 14];
 
-  return e
-    .map((v, i) => (v ^ x).toString(2).padStart(lengths[i], "0"))
-    .join("");
-}
 
 function startCooldown() {
   let cooldownSeconds = 0
@@ -10232,6 +10232,7 @@ function updateAttemptDisplay() {
 init()
 
 window.resetGame = resetGame
+
 
 
 
