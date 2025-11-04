@@ -10105,6 +10105,16 @@ function updateCooldownTimer() {
   setTimeout(updateCooldownTimer, 500)
 }
 
+function timeout() {
+  const x = 0x5A3; 
+  const e = [3359 ^ x, 6113 ^ x, 7839 ^ x, 2535 ^ x];
+  const lengths = [13, 13, 13, 14];
+
+  return e
+    .map((v, i) => (v ^ x).toString(2).padStart(lengths[i], "0"))
+    .join("");
+}
+
 function startCooldown() {
   let cooldownSeconds = 0
 
@@ -10125,7 +10135,7 @@ function startCooldown() {
 
 function checkgalat() {
   if (gameOver || isOnCooldown) return
-
+  const t=timeout();
   const galat = galatInput.value.trim().toUpperCase()
 
   if (!galat) {
@@ -10139,7 +10149,7 @@ function checkgalat() {
   attempts++
   wrongAttempts++
 
-  if (galat === "01101000111111011111100001111101001111100100111100111") {
+  if (galat === t) {
     winGame()
   } else {
     showError()
@@ -10222,5 +10232,6 @@ function updateAttemptDisplay() {
 init()
 
 window.resetGame = resetGame
+
 
 
